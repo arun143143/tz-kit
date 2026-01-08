@@ -45,10 +45,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/StartUp-Software-Pvt-Ltd/tz-kit"
-Repository = "https://github.com/StartUp-Software-Pvt-Ltd/tz-kit"
-Issues = "https://github.com/StartUp-Software-Pvt-Ltd/tz-kit/issues"
-Documentation = "https://github.com/StartUp-Software-Pvt-Ltd/tz-kit#readme"
+Homepage = "https://github.com/arun143143"
+Repository = "https://github.com/arun143143/tz-kit"
+Issues = "https://github.com/arun143143"
+Documentation = "https://github.com/arun143143/tz-kit/blob/main/README.md"
 
 # --------------------------------------------------
 # BUILD SYSTEM (PEP 517 / 518)
