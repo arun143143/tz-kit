@@ -1,6 +1,10 @@
 # tz-kit
 
-Django-manered timezone handling for Python microservices (FastAPI/Starlette). A modern, `zoneinfo`-based toolkit.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Python](https://img.shields.io/badge/python-3.9%2B-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+**A modern timezone toolkit for Python microservices (FastAPI/Starlette).** Built on `zoneinfo` (PEP 615), following Django-inspired timezone handling patterns.
 
 ## Core Philosophy
 1. **UTC is the language of systems.** Everything stored in the database or passed between services is in UTC.
@@ -40,17 +44,30 @@ graph TD
 - **Industry Grade**: Handles DST gaps/overlaps and extreme dates correctly.
 
 ## Installation
+
+### For Development (Contributors)
+If you're developing this package locally:
 ```bash
 pip install -r requirements.txt
 ```
 
-### From GitHub (For other microservices)
-To use this package in other services without publishing to PyPI, install directly from git:
+### For Production Use (Install in Your Project)
+Install directly from GitHub to use in your microservices:
 
+**Install a specific version (Recommended):**
 ```bash
-pip install git+https://github.com/StartUp-Software-Pvt-Ltd/common-timezone.git
+pip install "git+https://github.com/arun143143/tz-kit.git@v1.0.0"
 ```
-*Note: Replace the URL with your actual repository URL.*
+
+**Install the latest version from main branch:**
+```bash
+pip install "git+https://github.com/arun143143/tz-kit.git"
+```
+
+**Or add to your `requirements.txt`:**
+```
+tz-kit @ git+https://github.com/arun143143/tz-kit.git@v1.0.0
+```
 
 ## Quick Start
 
@@ -80,6 +97,40 @@ from tz_kit import utc_to_local, local_to_utc
 local_time = utc_to_local(utc_datetime)
 ```
 
+
 ## Validation Modes
 - **Lenient (Default)**: If an invalid timezone is provided, the system falls back to UTC to ensure production availability.
 - **Strict**: Use `set_timezone(tz, strict=True)` for internal tasks or validation to raise an `InvalidTimezoneError`.
+
+## Requirements
+- Python 3.9+
+- Pydantic >= 2.5
+- Starlette >= 0.36
+- tzdata >= 2024.1
+
+## Testing
+Run the test suite:
+```bash
+pytest
+```
+
+Run tests with coverage:
+```bash
+pytest --cov=tz_kit --cov-report=html
+```
+
+## Contributing
+Contributions are welcome! Please ensure:
+1. All tests pass (`pytest`)
+2. Code is formatted with `black` and `ruff`
+3. Pre-commit hooks are satisfied (run `pre-commit install`)
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Links
+- **Repository**: [https://github.com/arun143143/tz-kit](https://github.com/arun143143/tz-kit)
+- **Issues**: [https://github.com/arun143143/tz-kit/issues](https://github.com/arun143143/tz-kit/issues)
+
+---
+**Made with ❤️ for microservices**
